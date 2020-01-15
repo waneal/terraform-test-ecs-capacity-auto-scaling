@@ -1,1 +1,6 @@
-# terraform-test-ecs-capacity-auto-scaling
+# How to run
+
+```bash
+terraform init
+terraform apply
+```

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "tmp-task",
+    "image": "ubuntu:latest",
+    "memory": 128,
+    "essential": true,
+    "command": ["tail", "-f", "/dev/null"]
+  }
+]
