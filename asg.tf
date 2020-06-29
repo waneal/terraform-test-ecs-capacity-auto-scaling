@@ -42,6 +42,14 @@ resource "aws_autoscaling_group" "tmp-asg" {
 
   # If you enable managedTerminationProtection on capacity provider, you have to enable this.
   # protect_from_scale_in = true
+
+  # This tag is required to scale instances by capacity provider
+  # ref: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-auto-scaling.html
+  tag {
+    key                 = "AmazonECSManaged"
+    value               = ""
+    propagate_at_launch = true
+  }
 }
 
 resource "aws_launch_template" "tmp-template" {
